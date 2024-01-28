@@ -1,0 +1,54 @@
+.container {
+  max-width: 500px;
+  margin: 0 50px;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.exit #out {
+  height: 40px;
+  width: 80px;
+  font-size: 15px;
+  padding: 10px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.exit{
+ margin-top: 620px;
+  position: fixed;
+  margin-left: 50px;
+  top: 0;
+  left: 0;  
+}
+.exit #out:hover{
+  background-color: #0056b3;
+}

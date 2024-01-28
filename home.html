@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ-Quản lý sinh viên</title>
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/480px-User_icon_2.svg.png"
+    />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="menu">
+        <h1>QUẢN LÝ SINH VIÊN</h1>
+        <h5>created by Andrew Phúc</h5>
+        <ul>
+          <li>
+            <div class="select-container">
+              <select id="select1">
+                <option value="option1">Thông tin môn học</option>
+                <option value="option2">Thông tin lớp học</option>
+                <option value="option3">Thống kê điểm sinh viên</option>
+                <option value="option4">Thông tin sinh viên</option>
+                <option value="option5">DS SV có điểm các môn >= 5</option>
+                <option value="option6">DS SV có điểm các môn < 5</option>
+                <option value="option7">DS MH có 2 tín chỉ</option>
+                <option value="option8">DS MH có 3 tín chỉ</option>
+              
+              </select>
+              <button onclick="displaySelectedOption()">Chọn</button>
+            </div>
+          </li>
+          <li>
+            <div class="mon" id="monhoc" onclick="showForm1()">
+              <p>THÔNG TIN MÔN HỌC</p>
+            </div>
+          </li>
+          <li>
+            <div class="mon" id="lophoc" onclick="showForm2()">
+              <p>THÔNG TIN LỚP HỌC</p>
+            </div>
+          </li>
+          <li>
+            <div class="mon" id="sinhvien" onclick="showForm3()">
+              <p>THÔNG TIN SINH VIÊN</p>
+            </div>
+          </li>
+          <li>
+            <div class="mon" id="diemsv" onclick="showForm4()">
+              <p>THÊM ĐIỂM MÔN HỌC</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <div class="overlay" id="formOverlay1">
+      <div class="form-container">
+        <h2>Thông tin môn học</h2>
+        <form id="monHocForm">
+          <label for="maMH">Mã môn học:</label>
+          <input type="text" id="maMH" name="maMH" required />
+
+          <label for="tenMH">Tên môn học:</label>
+          <input type="text" id="tenMH" name="tenMH" required />
+
+          <label for="soTC">Số tín chỉ:</label>
+          <input type="number" id="soTC" name="soTC" required />
+
+          <button type="submit" onclick="addMonHoc(event)">Thêm Môn Học</button>
+          <!-- </form> -->
+          <button onclick="hideForm()">Đóng</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="overlay" id="formOverlay2">
+      <div class="form-container">
+        <h2>Thông tin lớp học</h2>
+        <form id="lopForm">
+          <label for="maLP">Mã lớp:</label>
+          <input type="text" id="maLP" name="maLP" required />
+
+          <label for="tenLP">Tên lớp:</label>
+          <input type="text" id="tenLP" name="tenLP" required />
+
+          <label for="niemKhoa">Niên khóa:</label>
+          <input type="text" id="niemKhoa" name="niemKhoa" required />
+
+          <button type="submit" onclick="addLop(event)">Thêm lớp học</button>
+          <!-- </form> -->
+          <button onclick="hideForm()">Đóng</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="overlay" id="formOverlay3">
+      <div class="form-container">
+        <h2>Thông tin sinh viên</h2>
+        <form id="sinhVienForm">
+          <label for="maSV">Mã sinh viên:</label>
+          <input type="text" id="maSV" name="maSV" required />
+
+          <label for="tenSV">Tên sinh viên:</label>
+          <input type="text" id="tenSV" name="tenSV" required />
+
+          <label for="diaChi">Địa chỉ:</label>
+          <input type="text" id="diaChi" name="diaChi" required />
+
+          <label for="maLP_SV">Mã lớp:</label>
+          <input type="text" id="maLP_SV" name="maLP_SV" required />
+
+          <button type="submit" onclick="addSinhVien(event)">
+            Thêm sinh viên
+          </button>
+          <!-- </form> -->
+          <button onclick="hideForm()">Đóng</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="overlay" id="formOverlay4">
+      <div class="form-container">
+        <h2>Điểm sinh viên</h2>
+        <form id="diemSVForm">
+          <label for="maSV_Diem">Mã sinh viên:</label>
+          <input type="text" id="maSV_Diem" name="maSV_Diem" required />
+
+          <label for="maMH_Diem">Mã môn học:</label>
+          <input type="text" id="maMH_Diem" name="maMH_Diem" required />
+
+          <label for="diem">Điểm:</label>
+          <input type="number" id="diem" name="diem" required />
+
+          <button type="submit" onclick="addDiemSV(event)">Cập nhật</button>
+          <!-- </form> -->
+          <button onclick="hideForm()">Đóng</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="exit">
+      <input onclick="outform()" id="out" type="button" value="Thoát">
+    </div>
+
+
+    <div class="view" id="view-port">
+      <div class="off" onclick="toggleViewPort()">
+        <p>x</p>
+      </div>
+    </div>
+      
+    <div id="monhocTable">
+      <table>
+        <!-- Table content will be inserted here -->
+      </table>
+    </div>
+
+    <div id="lophocTable">
+      <table>
+        <!-- Table content will be inserted here -->
+      </table>
+    </div>
+
+    <div id="diemsvTable">
+      <table>
+        <!-- Table content will be inserted here -->
+      </table>
+    </div>
+
+    <div id="sinhvienTable">
+      <table>
+        <!-- Table content will be inserted here -->
+      </table>
+    </div>
+
+    <div id="dssvTable">
+      <table>
+        <!-- Table content will be inserted here -->
+      </table>
+    </div>
+
+    <div id="dsmhTable">
+      <table>
+        <!-- Table content will be inserted here -->
+      </table>
+    </div>
+
+  
+
+    <script src="./js/home.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 2000px;
+  height: 700px;
+  background-image: url("../background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+main {
+  width: 50%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  width: 90%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+}
+
+.menu ul {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu ul li {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu h1 {
+  margin-top: 20px;
+}
+
+.menu h5 {
+  font-weight: 100;
+  margin-top: 20px;
+}
+.mon {
+  width: 40%;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.mon:hover {
+  transform: scale(1.04);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  background-color: brown;
+}
+
+.select-container {
+  display: flex;
+}
+
+.select-container select {
+  padding: 0 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+
+.select-container button {
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+/* CSS for overlay and form container */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 20%;
+  background: white;
+  padding: 10px 50px 20px 20px;
+  border-radius: 15px;
+}
+.table {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+/* Rest of your CSS styles */
+#monhocTable {
+  height: 300px;
+  overflow: auto;
+  position: absolute;
+  left: 55%;
+}
+
+#monhocTable table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#monhocTable th,
+#monhocTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+
+}
+
+#monhocTable th {
+  background-color: #f9f9f9;
+}
+
+#monhocTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#monhocTable tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+#monhocTable tr:hover {
+  background-color: #e0e0e0;
+}
+#monhocTable::-webkit-scrollbar {
+  width: 0px; /* Chiều rộng của thanh cuộn */
+}
+
+#dsmhTable {
+  height: 300px;
+  overflow: auto;
+  position: absolute;
+  left: 62%;
+}
+
+#dsmhTable table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#dsmhTable th,
+#dsmhTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+#dsmhTable th {
+  background-color: #f9f9f9;
+}
+
+#dsmhTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#dsmhTable tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+#dsmhTable tr:hover {
+  background-color: #e0e0e0;
+}
+#dsmhTable::-webkit-scrollbar {
+  width: 0px; /* Chiều rộng của thanh cuộn */
+}
+
+#lophocTable {
+  height: 300px;
+  overflow: auto;
+  position: absolute;
+  left: 55%;
+}
+#lophocTable table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#lophocTable th,
+#lophocTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#lophocTable th {
+  background-color: #f9f9f9;
+}
+
+#lophocTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#lophocTable tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+#lophocTable tr:hover {
+  background-color: #e0e0e0;
+}
+#lophocTable::-webkit-scrollbar {
+  width: 0px; /* Chiều rộng của thanh cuộn */
+}
+
+#diemsvTable {
+  height: 300px;
+  overflow: auto;
+  position: absolute;
+  left: 57%;
+}
+#diemsvTable table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#diemsvTable th,
+#diemsvTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#diemsvTable th {
+  background-color: #f9f9f9;
+}
+
+#diemsvTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#diemsvTable tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+#diemsvTable tr:hover {
+  background-color: #e0e0e0;
+}
+#diemsvTable::-webkit-scrollbar {
+  width: 0px; /* Chiều rộng của thanh cuộn */
+}
+
+#dssvTable {
+  height: 300px;
+  overflow: auto;
+  position: absolute;
+  left: 65%;
+}
+#dssvTable table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#dssvTable th,
+#dssvTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#dssvTable th {
+  background-color: #f9f9f9;
+}
+
+#dssvTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#dssvTable tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+#dssvTable tr:hover {
+  background-color: #e0e0e0;
+}
+#dssvTable::-webkit-scrollbar {
+  width: 0px; /* Chiều rộng của thanh cuộn */
+}
+
+
+#sinhvienTable {
+  height: 300px;
+  overflow: auto;
+  position: absolute;
+  left: 51%;
+}
+#sinhvienTable table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#sinhvienTable th,
+#sinhvienTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#sinhvienTable th {
+  background-color: #f9f9f9;
+}
+
+#sinhvienTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#sinhvienTable tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+#sinhvienTable tr:hover {
+  background-color: #e0e0e0;
+}
+#sinhvienTable::-webkit-scrollbar {
+  width: 0px; /* Chiều rộng của thanh cuộn */
+}
+/* CSS to display the Close button */
+.view {
+  position: relative;
+  background-image: linear-gradient(rgb(159, 232, 231), rgb(243, 243, 232));
+  border-radius: 10px;
+  width: 700px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+#view-port {
+  display: none;
+}
+.off {
+  float: right;
+  margin: 2% 3% 3% 0;
+  background-color: red;
+  padding: 4px 9px;
+  border-radius: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.off:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
